@@ -1,0 +1,12 @@
+{
+    "name": "Ubuntu (custom)",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "runArgs": [
+        "--init"
+    ],
+    "postCreateCommand": "bash -lc 'node -v && python3 --version && django-admin --version && python3 -c \"import flask; print(flask.__version__)\" && mongod --version'"
+}
